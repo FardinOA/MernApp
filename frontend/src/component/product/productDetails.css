@@ -1,0 +1,5 @@
+.productDetails {
+    padding-top: 10rem;
+    display: grid;
+    place-items: center;
+}
