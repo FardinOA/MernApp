@@ -1,0 +1,132 @@
+.productsHeading {
+    margin: 2rem auto;
+    width: 15vw;
+    text-align: center;
+    padding: 2rem;
+    font: 500 1.5rem "Roboto";
+    color: rgba(0, 0, 0, 0.678);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    /* padding: 0 5rem; */
+    margin: 2rem auto;
+    width: 80vw;
+    min-height: 40vh;
+    justify-content: center;
+}
+
+/* pagination  */
+.paginationBox {
+    display: flex;
+    justify-content: center;
+    margin: 5rem;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.page-item {
+    background-color: rgb(255, 255, 255);
+    list-style: none;
+    padding: 1rem 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.178);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.page-item:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+.page-item:last-child {
+    border-radius: 0 5px 5px 0;
+}
+
+.page-item:hover {
+    background-color: rgb(157, 157, 157);
+}
+
+.page-item:hover .page-link {
+    color: white;
+}
+.page-link {
+    text-decoration: none;
+    color: black;
+    font: 300 1rem cursive;
+}
+
+.pageActive {
+    background-color: tomato;
+}
+.pageLinkActive {
+    color: white;
+}
+
+.filterBox {
+    /* padding: 0 1rem; */
+
+    width: 10vw;
+    box-sizing: border-box;
+    position: absolute;
+    top: 16rem;
+    left: 2rem;
+}
+
+.categoryBox {
+    padding: 0%;
+}
+
+.category-link {
+    list-style: none;
+    color: rgba(0, 0, 0, 0.71);
+    font: 400 1rem cursive;
+    margin: 0.4rem;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.category-link:hover {
+    color: tomato;
+}
+
+.activeCategory {
+    color: tomato;
+    font: 800 1rem "Roboto";
+}
+
+.filterBox > fieldset {
+    border: 1px solid rgba(0, 0, 0, 0.46);
+}
+
+@media screen and (max-width: 1100px) {
+    .filterBox {
+        position: static;
+        width: 20rem;
+        margin: 0 auto;
+    }
+
+    .page-item {
+        padding: 0.5rem 0.7rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .productsHeading {
+        width: 25vw;
+    }
+    .filterBox {
+        position: static;
+        width: 20rem;
+        margin: 0 auto;
+    }
+
+    .page-item {
+        padding: 0.5rem 0.7rem;
+    }
+}

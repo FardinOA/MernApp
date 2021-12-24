@@ -1,0 +1,57 @@
+.searchBox {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.searchBox > input[type="text"] {
+    width: 50%;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+    color: rgba(0, 0, 0, 0.34);
+    border: none;
+    outline: none;
+    border-radius: 0%;
+    font: 300 1.1rem cursive;
+    border-radius: 5px 0px 0px 5px;
+    box-sizing: border-box;
+    height: 8%;
+}
+
+.searchBox > input[type="submit"] {
+    height: 8%;
+    width: 10%;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    color: white;
+    font: 300 1.1rem "Roboto";
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.274);
+    background-color: tomato;
+    border-radius: 0%;
+    border-radius: 0px 5px 5px 0px;
+    transition: all 0.5s;
+}
+
+.searchBox > input[type="submit"]:hover {
+    background-color: rgb(55, 97, 214);
+}
+
+@media screen and (max-width: 600px) {
+    .searchBox > input[type="text"] {
+        width: 60%;
+        font: 500 1.5rem cursive;
+    }
+
+    .searchBox > input[type="submit"] {
+        width: 20%;
+    }
+}

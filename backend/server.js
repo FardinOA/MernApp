@@ -1,6 +1,7 @@
 const app = require("./app");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
+const cloudinary = require("cloudinary");
 
 // Handling uncaught Error exceptions
 process.on("uncaughtException", (err) => {
@@ -23,6 +24,14 @@ mongoose
     .then((data) => {
         console.log(`Mongo db connected with server ${data.connection.host}`);
     });
+
+// connect cloudinary
+
+cloudinary.config({
+    cloud_name: process.env.CLOUDINARY_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINAY_API_SECRET,
+});
 
 const server = app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);

@@ -1,0 +1,145 @@
+.confirmOrderPage {
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 6fr 3fr;
+}
+
+.confirmOrderPage > div:last-child {
+    border-left: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.confirmShippingArea {
+    padding: 2rem;
+    padding-bottom: 0%;
+}
+
+.confirmShippingArea > p {
+    font: 400 1.8rem "Roboto";
+}
+
+.confirmShippingAreaBox,
+.confirmCartItemsContainer {
+    margin: 2rem;
+}
+
+.confirmShippingAreaBox > div {
+    display: flex;
+    margin: 1rem 0;
+}
+
+.confirmShippingAreaBox > div > p {
+    font: 400 1rem "Roboto";
+    color: black;
+}
+
+.confirmShippingAreaBox > div > span {
+    color: #575757;
+    margin: 0 1rem;
+    font: 100 1rem "Roboto";
+}
+
+.confirmCartItems > p {
+    padding: 2rem;
+    padding-top: 0.8rem;
+    font: 500 2rem "Roboto";
+}
+
+.confirmCartItemsContainer {
+    max-height: 20rem;
+    overflow-y: auto;
+}
+
+.confirmCartItemsContainer > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 400 1rem "Roboto";
+    margin: 2rem 0;
+}
+
+.confirmCartItemsContainer > div > img {
+    width: 5rem;
+    object-fit: contain;
+}
+
+.confirmCartItemsContainer > div > a {
+    color: #575757;
+    margin: 0 2rem;
+    width: 60%;
+    text-decoration: none;
+}
+
+.confirmCartItemsContainer > div > span {
+    font: 100 1rem "Roboto";
+    color: #979494;
+    display: flex;
+    /* width: 20%; */
+}
+
+.orderSummery {
+    padding: 5rem;
+}
+
+.orderSummery > p {
+    text-align: center;
+    font: 400 1.8rem "Roboto";
+    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    padding: 1rem;
+    width: 100%;
+    margin: auto;
+    box-sizing: border-box;
+}
+
+.orderSummery > div > div {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    font: 300 1rem "Roboto";
+}
+
+.orderSummery > div > div > span {
+    color: rgba(0, 0, 0, 0.692);
+}
+
+.orderSummaryTotal {
+    display: flex;
+    font: 400 1rem "Roboto";
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.37);
+}
+
+.orderSummery > button {
+    border: none;
+    background-color: tomato;
+    color: white;
+    font: 300 1rem "Roboto";
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin: auto;
+    outline: none;
+}
+
+.orderSummery > button:hover {
+    background-color: rgb(233, 43, 10);
+}
+
+@media screen and (max-width: 768px) {
+    .confirmOrderPage {
+        grid-template-columns: 1fr;
+        height: unset;
+    }
+
+    .confirmOrderPage > div:last-child {
+        border-left: 0;
+        border-top: 1px solid rgba(0, 0, 0, 0.25);
+    }
+    .confirmShippingArea > p {
+        text-align: center;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(141, 138, 138, 0.555);
+    }
+}
