@@ -1,0 +1,181 @@
+.updateProfileContainer {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(231, 231, 231);
+    position: fixed;
+    top: 0%;
+    left: 0;
+}
+
+.updateProfileBox {
+    background-color: white;
+    min-width: 25vw;
+    height: 70vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.342);
+}
+
+.updateProfileHeading {
+    text-align: center;
+    font: 400 1.5rem "Roboto";
+    color: rgba(0, 0, 0, 0.618);
+    padding: 1rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+    width: 50%;
+    margin: auto;
+}
+
+.updateProfileForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    padding: 2rem;
+    height: 70%;
+    transition: all 0.5s;
+}
+
+.updateProfileForm > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.updateProfileForm > div > input {
+    padding: 1rem 4rem;
+    padding-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    border-radius: 4px;
+    font: 300 1rem cursive;
+    outline: none;
+}
+
+.updateProfileForm > div > svg {
+    position: absolute;
+    transform: translateX(1rem);
+    font-size: 1.7rem;
+    /* color: rgba(0, 0, 0, 0.63); */
+    color: tomato;
+}
+
+#updateProfileImage > img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    border-radius: 100%;
+    margin: 1rem;
+}
+
+#updateProfileImage > input {
+    display: flex;
+
+    padding: 0%;
+}
+
+#updateProfileImage > input::file-selector-button {
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    margin: 0%;
+    font: 400 1.1rem cursive;
+    padding: 0 1rem;
+    color: rgba(0, 0, 0, 0.618);
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    transition: all 0.5s;
+}
+
+#updateProfileImage > input::file-selector-button:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.updateProfileBtn {
+    border: none;
+    width: 100%;
+    font: 300 1rem "Roboto";
+    background-color: tomato;
+    color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.5s;
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.342);
+}
+
+@media screen and (max-height: 820px) {
+    .updateProfileForm > div > input {
+        padding: 0.5rem 2rem;
+        font: 200 1rem;
+    }
+
+    .updateProfileForm > div > svg {
+        font-size: 1rem;
+    }
+
+    #updateProfileImage > img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+    }
+    #updateProfileImage > input::file-selector-button {
+        font: 500 1rem cursive;
+    }
+
+    .updateProfileForm > input {
+        font: 600 1rem "Roboto";
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .updateProfileContainer {
+        background-color: white;
+    }
+    .updateProfileUpBox {
+        width: 100vw;
+        height: 85vh;
+        box-shadow: none;
+        padding: 1rem;
+    }
+}
+
+@media screen and (min-height: 1300px) {
+    /* .loginSignUpBox {
+        width: 70vw;
+        height: 80vh;
+        box-shadow: none;
+        padding: 1rem;
+    } */
+
+    .updateProfileForm > div > input {
+        padding: 2.5rem 5rem;
+        font: 300 1.7rem cursive;
+    }
+
+    .updateProfileForm > div > svg {
+        font-size: 3rem;
+    }
+
+    #updateProfileImage > img {
+        width: 8rem;
+        height: 8rem;
+        object-fit: contain;
+    }
+    #updateProfileImage > input::file-selector-button {
+        font: 500 1.8rem cursive;
+    }
+
+    .updateProfileForm > input {
+        font: 600 2.5rem "Roboto";
+    }
+}

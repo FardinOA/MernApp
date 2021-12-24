@@ -1,10 +1,10 @@
 import React, { Fragment, useState, useEffect } from "react";
 import { CgMouse } from "react-icons/all";
 import "./Home.css";
-import Product from "./Product.js";
+import ProductCard from "./ProductCard";
 import MetaData from "../layout/MetaData";
 import { useSelector, useDispatch } from "react-redux";
-import { getProduct } from "../../actions/productActions";
+import { getProduct, clearErrors } from "../../actions/productActions";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
 // const product = {
@@ -18,18 +18,16 @@ import { useAlert } from "react-alert";
 //     ],
 // };
 const Home = () => {
-    const [allProduct, setAllProduct] = useState([]);
-    const { loading, error, products, productsCount } = useSelector(
-        (state) => state.products
-    );
+    const { loading, error, products } = useSelector((state) => state.products);
     const alert = useAlert();
     const dispatch = useDispatch();
     useEffect(() => {
         if (error) {
-            return alert.error(error);
+            alert.error(error);
+            dispatch(clearErrors());
         }
         dispatch(getProduct());
-    }, [dispatch, error]);
+    }, [dispatch, error, alert]);
 
     return (
         <Fragment>
@@ -51,7 +49,7 @@ const Home = () => {
                     <div className="container" id="container">
                         {products &&
                             products.map((product, ind) => (
-                                <Product product={product} />
+                                <ProductCard product={product} />
                             ))}
                     </div>
                 </Fragment>

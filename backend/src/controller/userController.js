@@ -4,8 +4,15 @@ const User = require("../models/userModel");
 const sendToken = require("../../utils/jwtToken");
 const sendEmail = require("../../utils/sendEmail");
 const crypto = require("crypto");
+const cloudinary = require("cloudinary").v2;
 // register a user
 exports.registerUser = catchAssyncErrors(async (req, res, next) => {
+    const myCloud = await cloudinary.uploader.upload(req.body.avatar, {
+        folder: "avatars",
+        width: 150,
+        crop: "scale",
+    });
+
     const { name, email, password } = req.body;
 
     const user = await User.create({
@@ -13,12 +20,22 @@ exports.registerUser = catchAssyncErrors(async (req, res, next) => {
         email,
         password,
         avatar: {
-            public_id: "this is a sample id",
-            url: "this is a sample url",
+            public_id: myCloud.public_id,
+            url: myCloud.secure_url,
         },
     });
 
     sendToken(user, 201, res);
+
+    try {
+        await sendEmail({
+            email: user.email,
+            subject: `Welcome To Ecommerce`,
+            message: `Welcome ${user.name} to Ecommerce \n Hope you will enjoy your Shopping`,
+        });
+    } catch (err) {
+        return next(new ErrorHandeler(err.message, 500));
+    }
 });
 
 // login
@@ -59,16 +76,13 @@ exports.logout = catchAssyncErrors(async (req, res, next) => {
 
 exports.forgotPassword = catchAssyncErrors(async (req, res, next) => {
     const user = await User.findOne({ email: req.body.email });
-    console.log(user);
 
     if (!user) return next(new ErrorHandeler("User not found", 404));
 
     // get the reset token
     const resetToken = user.getResetPasswordToken();
     user.save({ validateBeforeSave: false });
-    const resetPasswordUrl = `${req.protocol}://${req.get(
-        "host"
-    )}/api/v1/password/reset/${resetToken}`;
+    const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
     const message = `your password reset token is :- \n\n ${resetPasswordUrl} \n\nif you have not requested this email then, Please ignore it`;
 
@@ -164,7 +178,23 @@ exports.updateUserInfo = catchAssyncErrors(async (req, res, next) => {
         name: req.body.name,
         email: req.body.email,
     };
-    // we will add cloudinary later
+    if (req.body.avatar !== "") {
+        const user = await User.findById(req.user.id);
+
+        const imageId = user.avatar.public_id;
+        const res = await cloudinary.uploader.destroy(imageId);
+
+        const myCloud = await cloudinary.uploader.upload(req.body.avatar, {
+            folder: "avatars",
+            width: 150,
+            crop: "scale",
+        });
+
+        newUserInfo.avatar = {
+            public_id: myCloud.public_id,
+            url: myCloud.secure_url,
+        };
+    }
 
     const user = await User.findByIdAndUpdate(req.user.id, newUserInfo, {
         new: true,

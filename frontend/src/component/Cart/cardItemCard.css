@@ -1,0 +1,71 @@
+.cartItemCard {
+    display: flex;
+    padding: 1rem;
+    height: 9rem;
+    width: 6rem;
+    align-items: flex-start;
+    box-sizing: border-box;
+}
+
+.cartItemCard img {
+    width: 5rem;
+    object-fit: contain;
+}
+
+.cartItemCard > div {
+    display: flex;
+    margin: 1rem 1rem;
+    width: 5rem;
+    flex-direction: column;
+}
+
+.cartItemCard > div > a {
+    margin-top: 0.5rem;
+    max-width: 100%;
+    font: 300 0.9rem cursive;
+    color: rgba(24, 24, 24, 0.815);
+    text-decoration: none;
+}
+.cartItemCard > div > span {
+    font: 300 0.9rem "Roboto";
+    color: rgba(24, 24, 24, 0.815);
+}
+
+.cartItemCard > div > p {
+    color: tomato;
+    font: 100 0.8rem "Roboto";
+    cursor: pointer;
+}
+
+@media screen and (max-width: 700px) {
+    .cartItemCard {
+        padding: 1rem;
+        max-height: 25rem;
+        flex-direction: column;
+    }
+
+    .cartItemCard > div {
+        /* margin: 1rem 2rem; */
+        margin: 0;
+    }
+
+    .cartItemCard > div > a {
+        /* font: 200 0.5rem cursive; */
+        /* max-width: 100%; */
+        /* width: 5rem; */
+        /* background-color: tomato; */
+        overflow-x: hidden;
+    }
+    .cartItemCard > div > a > p {
+        font: 300 1rem cursive;
+        width: 100%;
+    }
+
+    .cartItemCard > div > span {
+        /* font: 300 1.9rem "Roboto"; */
+    }
+
+    .cartItemCard > div > p {
+        /* font: 100 1.8rem "Roboto"; */
+    }
+}

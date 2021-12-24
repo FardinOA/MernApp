@@ -68,7 +68,7 @@
 }
 .productCard > img {
     width: 15rem;
-
+    max-height: 10rem;
     object-fit: contain;
 }
 .productCard > div {
