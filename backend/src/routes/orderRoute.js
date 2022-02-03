@@ -12,7 +12,7 @@ const {
 
 router.post("/order/new", isAuth, createOrder);
 router.get("/orders/me", isAuth, myOrders);
-router.get("/order/:id", isAuth, authRole("admin"), getSingleOrder);
+router.get("/order/:id", isAuth, getSingleOrder);
 router.get("/admin/orders", isAuth, authRole("admin"), getAllOrders);
 router.put("/admin/order/:id", isAuth, authRole("admin"), updateOrderStatus);
 router.delete("/admin/order/:id", isAuth, authRole("admin"), deleteOrder);

@@ -68,9 +68,9 @@ const ConfirmOrder = ({ history }) => {
                                             </Link>
                                             <span>
                                                 {item.quantity} x {item.price} ={" "}
-                                                <p>
+                                                <b>
                                                     {item.price * item.quantity}
-                                                </p>
+                                                </b>
                                             </span>
                                         </div>
                                     ))}

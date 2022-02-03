@@ -10,9 +10,6 @@ import { resetPassword, clearErrors } from "../../actions/userActions";
 
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
-import VpnKeyIcon from "@material-ui/icons/VpnKey";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
 
 const ResetPassword = ({ history, match }) => {
     const dispatch = useDispatch();

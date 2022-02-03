@@ -1,5 +1,5 @@
 const app = require("./app");
-const dotenv = require("dotenv");
+
 const mongoose = require("mongoose");
 const cloudinary = require("cloudinary");
 
@@ -11,7 +11,9 @@ process.on("uncaughtException", (err) => {
     process.exit(1);
 });
 
-const res = dotenv.config({ path: "backend/.env" });
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({ path: "backend/.env" });
+}
 
 //connect database
 const url = process.env.MONGO_URL;

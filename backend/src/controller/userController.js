@@ -82,7 +82,9 @@ exports.forgotPassword = catchAssyncErrors(async (req, res, next) => {
     // get the reset token
     const resetToken = user.getResetPasswordToken();
     user.save({ validateBeforeSave: false });
-    const resetPasswordUrl = `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+    const resetPasswordUrl = `${req.protocol}://${req.get(
+        "host"
+    )}/password/reset/${resetToken}`;
 
     const message = `your password reset token is :- \n\n ${resetPasswordUrl} \n\nif you have not requested this email then, Please ignore it`;
 
@@ -182,7 +184,7 @@ exports.updateUserInfo = catchAssyncErrors(async (req, res, next) => {
         const user = await User.findById(req.user.id);
 
         const imageId = user.avatar.public_id;
-        const res = await cloudinary.uploader.destroy(imageId);
+        await cloudinary.uploader.destroy(imageId);
 
         const myCloud = await cloudinary.uploader.upload(req.body.avatar, {
             folder: "avatars",
@@ -220,7 +222,7 @@ exports.getSingleUser = catchAssyncErrors(async (req, res, next) => {
         return next(
             new ErrorHandeler(
                 `User does not exist with id: ${req.params.id}`,
-                401
+                400
             )
         );
     }
@@ -255,6 +257,9 @@ exports.deleteUser = catchAssyncErrors(async (req, res, next) => {
             )
         );
     }
+
+    const imageId = user.avatar.public_id;
+    await cloudinary.uploader.destroy(imageId);
     await user.remove();
     res.status(200).json({
         success: true,

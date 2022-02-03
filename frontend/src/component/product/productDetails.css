@@ -48,11 +48,8 @@
     width: 70%;
     padding: 1rem 0;
 }
-.detailsBlock-2 > span {
-    margin-top: 0.3rem;
-    color: rgba(54, 54, 54, 0.672);
-
-    font: 200 0.9rem "Roboto";
+.detailsBlock-2-span {
+    font: 200 1vmax cursive;
 }
 
 .detailsBlock-3 {
@@ -143,6 +140,19 @@
     transform: scale(1.1);
 }
 
+.submitDialog {
+    display: flex;
+    flex-direction: column;
+}
+
+.submitDialogTextArea {
+    border-radius: 1px solid rgba(0, 0, 0, 0.082);
+    margin: 1vmax 0;
+    outline: none;
+    padding: 1rem;
+    font: 300 1rem "Roboto";
+}
+
 .reviewsHeading {
     color: #000000be;
     font: 500 1.5rem "Roboto";
@@ -183,7 +193,6 @@
 }
 
 .reviewCard > span {
-    color: rgba(0, 0, 0, 0.445);
     font: 300 0.8rem cursive;
 }
 

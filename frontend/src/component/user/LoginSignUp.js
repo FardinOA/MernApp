@@ -7,8 +7,7 @@ import FaceIcon from "@material-ui/icons/Face";
 import Loader from "../layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { useAlert } from "react-alert";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import VisibilityOffIcon from "@material-ui/icons/VisibilityOff";
+
 import { login, clearErrors, register } from "../../actions/userActions";
 
 const LoginSignUp = ({ history, location }) => {
@@ -25,7 +24,7 @@ const LoginSignUp = ({ history, location }) => {
         email: "",
         password: "",
     });
-    const [showPassword, setShowPassword] = useState(false);
+
     const { name, email, password } = user;
 
     const [avatar, setAvatar] = useState();
@@ -43,7 +42,7 @@ const LoginSignUp = ({ history, location }) => {
             password,
             avatar,
         };
-        // console.log(myForm);
+
         dispatch(register(myForm));
     };
 
@@ -137,28 +136,13 @@ const LoginSignUp = ({ history, location }) => {
                                 <div className="loginPassword">
                                     <LockOpenIcon />
                                     <input
-                                        type={
-                                            showPassword ? "text" : "password"
-                                        }
+                                        type="password"
                                         value={loginPassword}
                                         placeholder="Password"
                                         onChange={(e) =>
                                             setLoginPassword(e.target.value)
                                         }
                                     />
-                                    {/* {showPassword ? (
-                                        <VisibilityOffIcon
-                                            onClick={() =>
-                                                setShowPassword(false)
-                                            }
-                                        />
-                                    ) : (
-                                        <VisibilityIcon
-                                            onClick={() =>
-                                                setShowPassword(true)
-                                            }
-                                        />
-                                    )} */}
                                 </div>
                                 <Link to="/password/forgot">
                                     {" "}
