@@ -58,10 +58,5 @@
             "last 1 safari version"
         ]
     },
-    "configurations": {
-        "runtimeArgs": [
-            "--max-old-space-size=8192"
-        ]
-    },
     "proxy": "http://192.168.0.100:8000"
 }
