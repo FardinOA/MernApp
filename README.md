@@ -10,7 +10,7 @@ Make Sure to Create a .env file in backend/.env directory and add appropriate va
 
 **Essential Variables**
 PORT=
-MONGO*URL =
+MONGO_URL =
 STRIPE_API_KEY=
 STRIPE_SECRET_KEY=
 JWT_SECRET=
@@ -23,4 +23,4 @@ SMPT_HOST=
 CLOUDINARY_NAME
 CLOUDINARY_API_KEY
 CLOUDINARY_API_SECRET
-\_fill each filed with your info respectively*
+\_fill each filed with your info respectively\*
