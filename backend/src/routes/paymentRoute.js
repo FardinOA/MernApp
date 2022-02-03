@@ -6,6 +6,6 @@ const {
     sendStripeApiKey,
 } = require("../controller/paymentController");
 router.post("/payment/process", isAuth, processPayment);
-router.post("/stripeapikey", isAuth, sendStripeApiKey);
+router.get("/stripeapikey", isAuth, sendStripeApiKey);
 
 module.exports = router;

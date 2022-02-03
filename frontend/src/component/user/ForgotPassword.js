@@ -11,7 +11,7 @@ import { clearErrors, forgotPassword } from "../../actions/userActions";
 const ForgotPassword = () => {
     const dispatch = useDispatch();
     const alert = useAlert();
-    const { user } = useSelector((state) => state.user);
+
     const { error, message, loading } = useSelector(
         (state) => state.forgotPassword
     );

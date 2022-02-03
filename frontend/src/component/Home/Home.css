@@ -78,8 +78,8 @@
     text-align: center;
 }
 
-.productCard > div > span {
-    margin: 0.5rem;
+.productCardSpan {
+    margin: 0.2rem;
     font: "Roboto";
 }
 

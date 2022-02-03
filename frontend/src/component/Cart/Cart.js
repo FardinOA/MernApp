@@ -15,13 +15,13 @@ const Cart = ({ history }) => {
         if (stock <= quantity) {
             return;
         }
-        console.log("qty", newQty);
+
         dispatch(addItemsToCart(id, newQty));
     };
 
     const decreaseQuantity = (id, quantity) => {
         const newQty = quantity - 1;
-        console.log("qty", newQty);
+
         if (1 >= quantity) {
             return;
         }
@@ -55,10 +55,7 @@ const Cart = ({ history }) => {
                         <div className="cartContainer">
                             {cartItems &&
                                 cartItems.map((item) => (
-                                    <Fragment
-                                        key={item.product}
-                                        key={item.product}
-                                    >
+                                    <Fragment key={item.product}>
                                         <CartItemCard
                                             item={item}
                                             deleteCartItems={deleteCartItems}

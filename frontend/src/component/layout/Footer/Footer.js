@@ -13,7 +13,7 @@ function Footer() {
             </div>
             <div className="midFooter">
                 <h1>LOGO</h1>
-                <p>High Quality is out first Priority</p>
+                <p>High Quality is our first Priority</p>
                 <p>
                     Copyright 2021 &copy; <span> Fardin Omor Afnan</span>{" "}
                 </p>

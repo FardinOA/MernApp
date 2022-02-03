@@ -1,0 +1,50 @@
+.productsListContainer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: white;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#productsListHeading {
+    font: 400 3rem "Roboto";
+    padding: 0.5vmax;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.651);
+    transition: all 0.5s;
+    margin: 2rem;
+    text-align: center;
+}
+
+.productsListTable {
+    background-color: white;
+    border: none !important;
+}
+
+.productsListTable div {
+    font: 300 1vmax "Roboto";
+    color: rgba(0, 0, 0, 0.666);
+    border: none !important;
+}
+
+.productsListTable a,
+.productsListTable button {
+    color: rgba(0, 0, 0, 0.529);
+    transition: all 0.5s;
+}
+
+.productsListTable a:hover {
+    color: tomato;
+}
+
+.productsListTable button:hover {
+    color: rgb(247, 7, 7);
+}
+
+@media screen and (max-width: 600px) {
+    .productsListTable div {
+        font: 300 4vw "Roboto";
+    }
+}

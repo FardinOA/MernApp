@@ -1,7 +1,7 @@
 .speedDail {
     position: fixed;
-    right: 3rem;
-    top: 5rem;
+    right: 3vmax;
+    top: 3vmax;
 }
 
 .speedDialIcon {

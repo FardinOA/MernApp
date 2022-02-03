@@ -1,0 +1,191 @@
+.newProductContainer {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: rgb(221, 221, 221);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border-left: 1px solid rgba(0, 0, 0, 0.16);
+}
+
+.newProductContainer h1 {
+    color: rgba(0, 0, 0, 0.733);
+    font: 300 2rem "Roboto";
+    text-align: center;
+}
+.createProductForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    padding: 3rem;
+    height: 90%;
+    width: 60vh;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.266);
+}
+
+.createProductForm > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+.createProductForm > div > input,
+.createProductForm > div > select,
+.createProductForm > div > textarea {
+    padding: 1rem 4rem;
+    padding-right: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.27);
+    border-radius: 4px;
+    font: 300 1rem cursive;
+    outline: none;
+}
+
+.createProductForm > div > svg {
+    position: absolute;
+    transform: translateX(1rem);
+    font-size: 1.7rem;
+    color: rgba(0, 0, 0, 0.63);
+}
+.createProductForm > div > svg:last-child {
+    position: absolute;
+    transform: translateX(24rem);
+    font-size: 1.7rem;
+    /* color: rgba(0, 0, 0, 0.63); */
+    color: tomato;
+}
+
+.createProductForm > div > svg:last-child :hover {
+    cursor: pointer;
+}
+
+#createProductFormFile > input {
+    display: flex;
+
+    padding: 0%;
+}
+
+#createProductFormFile > input::file-selector-button {
+    cursor: pointer;
+    width: 100%;
+    height: 5vh;
+    border: none;
+    margin: 0%;
+    font: 400 1.1rem cursive;
+    padding: 0 1rem;
+    color: rgba(0, 0, 0, 0.618);
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    transition: all 0.5s;
+}
+
+#createProductFormFile > input::file-selector-button:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+#createProductFormImage > img {
+    width: 4rem;
+    height: 4rem;
+    object-fit: contain;
+    border-radius: 100%;
+    margin: 0 0.5vmax;
+}
+
+#createProductFormImage {
+    width: 100%;
+    overflow: auto;
+}
+
+#createProductBtn {
+    border: none;
+    width: 100%;
+    font: 300 1rem "Roboto";
+    background-color: tomato;
+    color: white;
+    padding: 0.8rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.5s;
+    outline: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.342);
+}
+
+#createProductBtn:hover {
+    background-color: rgb(248, 55, 20);
+}
+
+@media screen and (max-height: 820px) {
+    .newProductContainer {
+        background-color: white;
+    }
+    .createProductForm {
+        margin: 1rem;
+    }
+
+    .createProductForm > div > input,
+    .createProductForm > div > select,
+    .createProductForm > div > textarea {
+        padding: 0.5rem 5rem;
+        font: 300 1rem cursive;
+    }
+
+    .createProductForm > div > svg {
+        font-size: 2rem;
+    }
+
+    #createProductFormImage > img {
+        width: 4rem;
+        height: 4rem;
+        object-fit: contain;
+    }
+    #createProductFormImage > input::file-selector-button {
+        font: 500 1rem cursive;
+    }
+
+    .createProductForm > input {
+        font: 600 1.5rem "Roboto";
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .createProductForm {
+        width: 60vh;
+    }
+    .createProductForm > div > svg:last-child {
+        position: absolute;
+        transform: translateX(19rem);
+        font-size: 1.7rem;
+        color: rgba(0, 0, 0, 0.63);
+        color: tomato;
+    }
+}
+
+@media screen and (min-height: 1300px) {
+    .createProductForm > div > input {
+        padding: 2.5rem 5rem;
+        font: 300 1.7rem cursive;
+    }
+
+    .createProductForm > div > svg {
+        font-size: 3rem;
+    }
+
+    #createProductFormImage > img {
+        width: 8rem;
+        height: 8rem;
+        object-fit: contain;
+    }
+    #createProductFormImage > input::file-selector-button {
+        font: 500 1.8rem cursive;
+    }
+
+    .createProductForm > input {
+        font: 600 2.5rem "Roboto";
+    }
+}

@@ -18,7 +18,7 @@ const UserOptions = ({ user }) => {
     const history = useHistory();
     const alert = useAlert();
     const dashboard = () => {
-        history.push("/dashboard");
+        history.push("/admin/dashboard");
     };
     const account = () => {
         history.push("/account");

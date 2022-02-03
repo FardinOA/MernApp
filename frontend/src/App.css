@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body {
+    cursor: url("./images/cursor.png"), auto;
+}
+
 /* chorome, safari ,edge,opera  */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -17,8 +21,8 @@ input[type="number"] {
 }
 
 .redColor {
-    color: red;
+    color: red !important;
 }
 .greenColor {
-    color: green;
+    color: green !important;
 }

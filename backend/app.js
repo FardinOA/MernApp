@@ -6,9 +6,15 @@ const fileUpload = require("express-fileupload");
 const app = express();
 const cors = require("cors");
 const dotenv = require("dotenv");
-const res = dotenv.config({ path: "backend/.env" });
+const path = require("path");
 
 //////////////////////////////
+
+// config
+if (process.env.NODE_ENV !== "PRODUCTION") {
+    require("dotenv").config({ path: "backend/.env" });
+}
+
 app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(cookieParser());
@@ -25,6 +31,12 @@ app.use("/api/v1", productRoute);
 app.use("/api/v1", userRoute);
 app.use("/api/v1", orderRoute);
 app.use("/api/v1", paymentRoute);
+
+app.use(express.static(path.join(__dirname, "../frontend/build")));
+
+app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, "../frontend/build/index.html"));
+});
 
 //middleware for error
 app.use(errorMiddleware);
